@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const userRoutes = require('./routes/userRoutes');
 const roomRoutes = require('./routes/roomRoutes');
+const bookingRoutes = require('./routes/bookingRoutes');
 const path = require('path');
 
 const app = express();
@@ -21,6 +22,8 @@ app.set('views', path.join(__dirname, 'views'));
 // Routes
 app.use('/user', userRoutes);
 app.use('/rooms', roomRoutes);
+// Add booking routes
+app.use('/booking', bookingRoutes);
 
 // Start server
 const PORT = 3001;

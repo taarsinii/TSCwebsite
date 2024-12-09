@@ -9,6 +9,13 @@ const RoomModel = {
             .query('SELECT RoomCategory, RoomPricePerDay, RoomAvailabilityStatus FROM CW2.[Room]');
         return result.recordset;
     },
+
+    getAvailableRooms: async () => {
+        const pool = await sql.connect(dbConfig);
+        const result = await pool.request()
+            .query('SELECT RoomID, RoomCategory, RoomPricePerDay FROM CW2.[Room] WHERE RoomAvailabilityStatus = \'Available\'');
+        return result.recordset;
+    },
 };
 
 module.exports = RoomModel;
