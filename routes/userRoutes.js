@@ -7,6 +7,8 @@ router.get('/login', (req, res) => res.render('login', { error: null, success: n
 router.post('/login', UserController.login); 
 // Home route 
 router.get('/home', UserController.home); 
+// Account route
+router.get('/account', UserController.account);
 // Logout route 
 router.get('/logout', UserController.logout); 
 module.exports = router; 
