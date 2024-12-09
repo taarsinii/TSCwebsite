@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Bookings</title>
+</head>
+<body>
+    <h1>Your Bookings</h1>
+
+    <% if (bookings.length > 0) { %>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Room ID</th>
+                    <th>Number of Guests</th>
+                    <th>Check-In Date</th>
+                    <th>Check-Out Date</th>
+                    <th>Total Price</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% bookings.forEach(booking => { %>
+                    <tr>
+                        <td><%= booking.BookingID %></td>
+                        <td><%= booking.RoomID %></td>
+                        <td><%= booking.NumberOfGuests %></td>
+                        <td><%= booking.CheckInDate %></td>
+                        <td><%= booking.CheckOutDate %></td>
+                        <td><%= booking.BookingTotalPrice %></td>
+                        <td><%= booking.BookingStatus %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No bookings found!</p>
+    <% } %>
+</body>
+</html>

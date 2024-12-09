@@ -7,4 +7,7 @@ const BookingController = require('../controllers/bookingController');
 router.get('/new', BookingController.showBookingForm);
 router.post('/new', BookingController.createBooking);
 
+// Route to display bookings for a logged-in user
+router.get('/', BookingController.showUserBookings);
+
 module.exports = router;

@@ -24,6 +24,8 @@ app.use('/user', userRoutes);
 app.use('/rooms', roomRoutes);
 // Add booking routes
 app.use('/booking', bookingRoutes);
+// Define routes
+app.use('/bookings', bookingRoutes);
 
 // Start server
 const PORT = 3001;
