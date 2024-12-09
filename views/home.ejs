@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
 </head>
 <body>
- <h1>Welcome, <%= user.FirstName %> <%= user.LastName %>!</h1>
- <p>Your Phone Number: <%= user.PhoneNum %></p>
+    <h1>Welcome, <%= user.FirstName %> <%= user.LastName %>!</h1>
+    <p>Your Phone Number: <%= user.PhoneNum %></p>
 
- <nav>
- <ul>
- <li><a href="/user/account">Account</a></li>
- <li><a href="/rooms">View Rooms</a></li>
- <li><a href="/book">Book Now</a></li>
- <li><a href="/bookings">View Booking</a></li> <!-- New Link 
-
- <li><a href="/user/logout">Logout</a></li>
- 
- </ul>
+    <nav>
+        <ul>
+            <li><a href="/user/account">Account</a></li>
+            <li><a href="/rooms/view">View Rooms</a></li>
+            <li><a href="/booking/new">Book Now</a></li>
+            <li><a href="/bookings">View Booking</a></li> <!-- New Link -->
+            <li><a href="/user/logout">Logout</a></li>
+        </ul>
+    </nav>
+    
+</body>
+</html>

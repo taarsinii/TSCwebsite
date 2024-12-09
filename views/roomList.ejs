@@ -1,0 +1,36 @@
+<!-- views/rooms.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Rooms</title>
+</head>
+<body>
+    <h1>Room List</h1>
+    <% if (rooms && rooms.length > 0) { %>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Room Category</th>
+                    <th>Price Per Day</th>
+                    <th>Availability Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% rooms.forEach(room => { %>
+                    <tr>
+                        <td><%= room.RoomCategory %></td>
+                        <td><%= room.RoomPricePerDay %></td>
+                        <td><%= room.RoomAvailabilityStatus %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No rooms available!</p>
+    <% } %>
+
+    <a href="/user/home">Back to Home</a>
+</body>
+</html>

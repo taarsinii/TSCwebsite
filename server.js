@@ -1,22 +1,29 @@
+// server.js
 const express = require('express');
-const session = require('express-session');
 const bodyParser = require('body-parser');
-const app = express();
-
-// Import routes
+const session = require('express-session');
 const userRoutes = require('./routes/userRoutes');
+const roomRoutes = require('./routes/roomRoutes');
+const path = require('path');
+
+const app = express();
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: true }));
+app.use(session({ secret: 'secret-key', resave: false, saveUninitialized: true }));
 
-// Set view engine
+// Set EJS as the template engine
 app.set('view engine', 'ejs');
 
-// Use userRoutes with the '/user' prefix
-app.use('/user', userRoutes);
+// Set the views directory using __dirname to resolve the absolute path
+app.set('views', path.join(__dirname, 'views'));
 
-// Start the server
-const PORT = 3000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// Routes
+app.use('/user', userRoutes);
+app.use('/rooms', roomRoutes);
+
+// Start server
+const PORT = 3001;
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+});
