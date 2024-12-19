@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+}
+
+/* Container to center the content */
+.container {
+    margin-top: 50px;
+}
+
+/* Card styles for the account details section */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header of the card */
+.card-header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Body of the card */
+.card-body {
+    padding: 30px;
+}
+
+/* Account details paragraph styling */
+.account-details p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+/* Button styles */
+.btn-custom {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+}
+
+/* Back button style */
+.back-btn {
+    background-color: #6c757d;
+    margin-top: 50px; /* Add space above the button */
+}
+
+.back-btn:hover {
+    background-color: #5a6268;
+}
