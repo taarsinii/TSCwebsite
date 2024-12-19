@@ -1,35 +1,49 @@
-<!-- views/rooms.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Rooms</title>
+    <link rel="stylesheet" href="/css/roomLists.css">
 </head>
 <body>
-    <h1>Room List</h1>
-    <% if (rooms && rooms.length > 0) { %>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Room Category</th>
-                    <th>Price Per Day</th>
-                    <th>Availability Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% rooms.forEach(room => { %>
-                    <tr>
-                        <td><%= room.RoomCategory %></td>
-                        <td><%= room.RoomPricePerDay %></td>
-                        <td><%= room.RoomAvailabilityStatus %></td>
-                    </tr>
-                <% }); %>
-            </tbody>
-        </table>
-    <% } else { %>
-        <p>No rooms available!</p>
-    <% } %>
+    <h1>Available Rooms</h1>
+
+    <div class="room-container">
+        <% if (rooms && rooms.length > 0) { %>
+            <% rooms.forEach(room => { %>
+                <div class="room-card">
+                    <!-- Room Image based on category -->
+                    <% if (room.RoomCategory === 'Family') { %>
+                        <img src="/images/FamilyRoom.jpg" alt="Family Room">
+                    <% } else if (room.RoomCategory === 'Deluxe') { %>
+                        <img src="/images/DeluxeRoom.jpg" alt="Deluxe Room">
+                    <% } else if (room.RoomCategory === 'Suite') { %>
+                        <% if (room.RoomPricePerDay === 134) { %>
+                            <img src="/images/SuiteRoom.jpg" alt="Suite Room 1">
+                        <% } else { %>
+                            <img src="/images/PremiumSuiteRoom.jpg" alt="Suite Room 2">
+                        <% } %>
+                    <% } else { %>
+                        <img src="https://via.placeholder.com/280x150?text=<%= room.RoomCategory %>" alt="<%= room.RoomCategory %> Room">
+                    <% } %>
+
+                    <!-- Room details -->
+                    <div class="room-details">
+                        <div class="room-category"><%= room.RoomCategory %> Room</div>
+                        <div class="room-price">Price: $<%= room.RoomPricePerDay %> / Day</div>
+                        <% if (room.RoomAvailabilityStatus === 'Available') { %>
+                            <div class="room-status">Status: Available</div>
+                        <% } else { %>
+                            <div class="room-status booked">Status: Booked</div>
+                        <% } %>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p style="text-align: center;">No rooms available!</p>
+        <% } %>
+    </div>
 
     <a href="/user/home">Back to Home</a>
 </body>

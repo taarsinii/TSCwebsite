@@ -15,4 +15,6 @@ router.get('/account', UserController.account);
 router.get('/bookings', BookingController.showUserBookings);
 // Logout route 
 router.get('/logout', UserController.logout); 
+//View Booking return back to home
+router.get('/home', UserController.showHomePage);
 module.exports = router; 

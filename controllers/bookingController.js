@@ -82,6 +82,95 @@ const BookingController = {
             res.status(500).render('viewBookings', { user: req.session.user, bookings: [], error: 'Failed to load bookings!' });
         }
     },
+
+    // UPDATE REQUEST
+
+    showEditForm: async (req, res) => {
+        const { BookingID } = req.params;
+    
+        try {
+            // Fetch booking details by ID
+            const booking = await BookingModel.getBookingByID(BookingID);
+    
+            if (!booking) {
+                return res.status(404).send('Booking not found.');
+            }
+    
+            res.render('editBookingForm', { booking });
+        } catch (err) {
+            console.error('Failed to load booking:', err.message);
+            res.status(500).send('Failed to load booking.');
+        }
+    },
+//UPDATE BOOKING
+    updateBooking: async (req, res) => {
+        const { BookingID } = req.params;
+        const { NumberOfGuests, CheckOutDate } = req.body;
+
+        try {
+            // Ensure BookingID and updated details are passed correctly
+            console.log('BookingID:', BookingID);
+            console.log('Updated Details:', { NumberOfGuests, CheckOutDate });
+
+            // Call the model function to update the booking
+            const updated = await BookingModel.updateBooking(BookingID, {
+                NumberOfGuests,
+                CheckOutDate,
+            });
+
+            if (!updated) {
+                return res.status(404).send('Booking not found or update failed.');
+            }
+
+            // After update, redirect back to the bookings list page
+            res.redirect('/booking');
+        } catch (err) {
+            console.error('Failed to update booking:', err.message);
+            res.status(500).send('Failed to update booking.');
+        }
+    },
+    // Add this method to get a booking by its BookingID
+    getBookingByID: async (req, res) => {
+        const { BookingID } = req.params;
+
+        try {
+            const booking = await BookingModel.getBookingByID(BookingID);
+            if (!booking) {
+                return res.status(404).send('Booking not found.');
+            }
+            res.render('viewBookings', { bookings });
+        } catch (err) {
+            console.error('Error fetching booking:', err.message);
+            res.status(500).send('Failed to fetch booking.');
+        }
+    },
+
+    // DELETE BOOKING
+   deleteBooking: async (req, res) => {
+    const { BookingID } = req.params;
+
+    try {
+        // Make sure the booking exists before trying to delete it
+        const booking = await BookingModel.getBookingByID(BookingID);
+        if (!booking) {
+            return res.status(404).json({ message: 'Booking not found or already deleted.' });
+        }
+
+        // Call the model function to delete the booking
+        const deleted = await BookingModel.deleteBooking(BookingID);
+
+        if (!deleted) {
+            return res.status(404).json({ message: 'Failed to delete booking.' });
+        }
+
+        // Send a success response
+        res.status(200).json({ message: 'Booking deleted successfully.' });
+    } catch (err) {
+        console.error('Failed to delete booking:', err.message);
+        res.status(500).json({ message: 'Failed to delete booking.' });
+    }
+},
 };
+
 
 module.exports = BookingController;

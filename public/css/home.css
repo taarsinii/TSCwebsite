@@ -1,0 +1,82 @@
+/* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Blue Background Header */
+.navbar {
+    background-color: #000f89;
+    padding: 20px 30px;
+    color: white;
+    text-align: center;
+    border-bottom: 2px solid #fff; /* Add a 2px white border bottom */
+}
+
+.navbar h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Main Content Area with Background Image */
+main {
+    background-image: url('/images/hotel_photo.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+/* User Info Section */
+.user-info {
+    margin-bottom: 20px;
+}
+
+.user-info h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.user-info p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Navigation Menu Styling */
+nav {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin-bottom: 15px;
+}
+
+nav a {
+    display: block;
+    background-color: #000f89;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: #ffcc00;
+}

@@ -43,6 +43,14 @@ const UserController = {
 
  res.render('account', { user: req.session.user });
  },
+ //ADD RETURN HOME BUTTON IN VIEW BOOKING PAGE
+ showHomePage: (req, res) => {
+    if (!req.session.user) {
+        return res.redirect('/user/login');
+    }
+    res.render('home', { user: req.session.user });
+},
+
 
  logout: (req, res) => {
  req.session.destroy(() => {
