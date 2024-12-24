@@ -17,7 +17,7 @@ const UserController = {
  return res.render('login', { error: 'Invalid email or password!', success: null });
  }
 
- // Save user session
+ // Save user data
  req.session.user = user;
 
  // Redirect to the home page if login is successful
@@ -30,7 +30,7 @@ const UserController = {
 
  home: (req, res) => {
  if (!req.session.user) {
- return res.redirect('/user/login'); // Redirect to login if no session
+ return res.redirect('/user/login'); // Redirect to login 
  }
 
  res.render('home', { user: req.session.user });
