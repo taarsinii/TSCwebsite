@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Booking</title>
+    <link rel="stylesheet" href="/css/editBookingForm.css"> <!-- Link to the CSS file -->
 </head>
 <body>
-    <h1>Edit Booking</h1>
-    
-    <form action="/booking/edit/<%= booking.BookingID %>?_method=PUT" method="POST">
-        <label for="NumberOfGuests">Number of Guests:</label>
-        <input type="number" name="NumberOfGuests" id="NumberOfGuests" value="<%= booking.NumberOfGuests %>" required>
+    <div class="form-container">
+        <h1>Edit Booking</h1>
+        
+        <form action="/booking/edit/<%= booking.BookingID %>?_method=PUT" method="POST" class="edit-booking-form">
+            <div class="form-group">
+                <label for="NumberOfGuests">Number of Guests:</label>
+                <input type="number" name="NumberOfGuests" id="NumberOfGuests" value="<%= booking.NumberOfGuests %>" required>
+            </div>
 
-        <label for="CheckOutDate">Check-Out Date:</label>
-        <input type="date" name="CheckOutDate" id="CheckOutDate" value="<%= booking.CheckOutDate.toISOString().split('T')[0] %>" required>
+            <div class="form-group">
+                <label for="CheckOutDate">Check-Out Date:</label>
+                <input type="date" name="CheckOutDate" id="CheckOutDate" value="<%= booking.CheckOutDate.toISOString().split('T')[0] %>" required>
+            </div>
 
-        <button type="submit">Update Booking</button>
-    </form>
+            <button type="submit" class="submit-btn">Update Booking</button>
+        </form>
+        
+        <button class="back-btn" onclick="window.history.back();">Back</button>
+    </div>
 </body>
 </html>
