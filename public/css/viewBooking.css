@@ -1,0 +1,128 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Light gray background */
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+/*  Title */
+h1 {
+    font-size: 2.5rem;
+    color: #000f89; /* Deep blue */
+    margin-bottom: 20px;
+}
+
+/* Table Style */
+table {
+    width: 90%;
+    margin: 0 auto 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/*  Headers */
+thead {
+    background-color: #000f89; /* Deep blue */
+    color: white;
+}
+
+thead th {
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+/* Table Rows */
+tbody tr {
+    transition: background-color 0.3s;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f5;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Buttons */
+button, a {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Edit Button */
+a {
+    background-color: #000f89;
+}
+
+a:hover {
+    background-color: #ffcc00; /* Gold on hover */
+    color: black;
+}
+
+/* Delete Button */
+button {
+    background-color: #e63946;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #b71c1c; /* Darker red */
+}
+
+/* Align Edit and Delete buttons  */
+td {
+    text-align: center; 
+}
+
+td a, td button {
+    display: inline-block; 
+}
+
+/* Back to Home Button */
+.back-to-home {
+    background-color: #000f89;
+    color: white;
+    margin-top: 20px;
+}
+
+.back-to-home:hover {
+    background-color: #ffcc00; /* Gold hover */
+    color: black;
+}
+
+/* No Bookings */
+p {
+    font-size: 1.2rem;
+    color: #666;
+}
