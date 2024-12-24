@@ -1,4 +1,3 @@
-/* Global Styles */
 html, body {
     height: 100%;
     margin: 0;
@@ -6,13 +5,13 @@ html, body {
     font-family: 'Arial', sans-serif;
 }
 
-/* Blue Background Header */
+/* Blue Header */
 .navbar {
     background-color: #000f89;
     padding: 20px 30px;
     color: white;
     text-align: center;
-    border-bottom: 2px solid #fff; /* Add a 2px white border bottom */
+    border-bottom: 2px solid #fff; 
 }
 
 .navbar h1 {
@@ -21,9 +20,9 @@ html, body {
     margin: 0;
 }
 
-/* Main Content Area with Background Image */
+/* Background Image */
 main {
-    background-image: url('/images/hotel_photo.jpg'); /* Replace with your image path */
+    background-image: url('/images/hotel_photo.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -32,7 +31,7 @@ main {
     text-align: center;
 }
 
-/* User Info Section */
+/* User Info */
 .user-info {
     margin-bottom: 20px;
 }
@@ -47,7 +46,7 @@ main {
     opacity: 0.8;
 }
 
-/* Navigation Menu Styling */
+/*  Menu  */
 nav {
     background-color: #fff;
     padding: 20px;
