@@ -1,7 +1,7 @@
 // controllers/bookingController.js
 const RoomModel = require('../models/roomModel');
 const BookingModel = require('../models/bookingModel');
-const { v4: uuidv4 } = require('uuid'); // This can be removed if you are no longer using UUID for BookingID
+const { v4: uuidv4 } = require('uuid'); // not using UUID for BookingID(1,2,3...)
 
 const BookingController = {
     showBookingForm: async (req, res) => {
@@ -18,6 +18,7 @@ const BookingController = {
         }
     },
 
+    // POST REQUEST
     createBooking: async (req, res) => {
         const { RoomID, NumberOfGuests, CheckInDate, CheckOutDate } = req.body;
         const { user } = req.session;
@@ -28,7 +29,7 @@ const BookingController = {
             let nextBookingID = 'B01'; // Default for the first booking
 
             if (latestBooking) {
-                // Extract the numeric part of the latest BookingID and increment
+                // Extract the numeric part of the latest BookingID 
                 const latestNumber = parseInt(latestBooking.BookingID.substring(1), 10);
                 nextBookingID = `B${(latestNumber + 1).toString().padStart(2, '0')}`;
             }
@@ -67,6 +68,7 @@ const BookingController = {
         }
     },
 
+// GET REQUEST
     showUserBookings: async (req, res) => {
         if (!req.session.user) {
             return res.redirect('/user/login');
