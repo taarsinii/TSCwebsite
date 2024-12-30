@@ -5,7 +5,7 @@
 ## **BookingService Microservice**
 ### _Task Requirement for the Assessment 2_  
 ![Task Requirement](public/images/TaskRequirement.png)  
----
+
 
 ## **Functionalities for the TSC Hotel Room Booking Website :**
 - Login using email address and password
@@ -19,4 +19,12 @@
 
 ## **Technologies Used**  
 - Development Environment Used: Visual Studio Code
-  ![VS code](public/images/VisualStudioCode.png)  
+  ![VS code](public/images/VScode.png)
+- Code Pattern Used: MVC (Model-View-Controller)
+  - Model: Responsible for data and database logic.
+  - View: Developed with EJS templates and front-end styled with CSS.
+  - Controller: JavaScript files serve as the controller for handling APIs and database interaction.
+- Languages Used:
+  - Node.js (JavaScript): For back-end programming.
+  - EJS: Used to render dynamic HTML pages.
+  - CSS: Used to style the user interface.
