@@ -18,8 +18,8 @@
 ---
 
 ## **Deployment**  
-### Start the server by using node server.js
-
+### Start the server by using _node server.js_ in Visual Studio Code
+![Server run](public/images/server_run.png)  
 
 ---
 
