@@ -17,9 +17,16 @@
 - Delete booking.
 ---
 
+## **Deployment**  
+### Start the server by using node server.js
+
+
+---
+
 ## **Database Setup**  
 - The database has been rebuilt using the CW2 schema, building on CW1, with three tables: USER, ROOM, and BOOKING. The BOOKING table serves as the core of the micro-service. SQL queries were designed to create the tables with appropriate constraints and relationships, ensuring data integrity.
-- 
+
+  ![Database CW2](public/images/database_interface.png)  
 ---
 
 ## **Technologies Used**  
